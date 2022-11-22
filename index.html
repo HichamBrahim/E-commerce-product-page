@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <!-- font awsome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- fix page -->
+  <link rel="stylesheet" href="css/fix.css">
+  <!-- main css file -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="modal">
+    <div class="close-modal"><img src="images/icon-close.svg" alt="close Modal"></div>
+    <div class="slider">
+      <div class="main-slider">
+        <span class="prev" onclick ='prev()'><img src="images/icon-previous.svg" alt="previous"></span>
+        <img class="main-img" src="images/image-product-1.jpg" alt="slider">
+        <span  class="next" onclick ='next()' ><img src="/images/icon-next.svg" alt="next"></span>
+      </div>
+      <ul class="slider-images" role="list">
+        <li class="slider-img"  data-id="1"><img src="images/image-product-1-thumbnail.jpg" alt="image 1"></li>
+        <li class="slider-img" data-id="2"><img src="images/image-product-2-thumbnail.jpg" alt="image 2"></li>
+        <li class="slider-img" data-id="3"><img src="images/image-product-3-thumbnail.jpg" alt="image 3"></li>
+        <li class="slider-img" data-id="4"><img src="images/image-product-4-thumbnail.jpg" alt="image 4"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="overlay-one" id="overlay"></div>
+  <div class="overlay-two" id="overlay"></div>
+
+
+  <header>
+    <div class="container">
+      <div class="header-part">
+        <div class="menu"><img src="images/icon-menu.svg" alt="menu"></div>
+        <a href="#" class="brand"><img src="images/logo.svg" alt="sneakers"></a>
+        <nav class="header-nav" role="navigation">
+          <div class="close"><img src="images/icon-close.svg" alt="close nav"></div>
+          <ul class="menu-list" role="list">
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="icons">
+        <div class="cart-icon">
+          <img src="images/icon-cart.svg" alt="cart">
+          <div class="total-items">0</div>
+        </div>
+        <div class="account-icon"><img src="images/image-avatar.png" alt="account"></div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="cart-container"></div>
+    <div class="container">
+      <div class="product-images">
+        <div class="main-image">
+          <span class="prev" onclick="prevImage()"><img src="images/icon-previous.svg" alt="previous"></span>
+          <img class="image" src="images/image-product-1.jpg" alt="main product">
+          <span class="next" onclick="nextImage()" ><img src="images/icon-next.svg" alt="next"></span>
+        </div>
+        <ul class="images" role="list">
+          <li class="img active" data-id="1"><img src="images/image-product-1-thumbnail.jpg" alt="image 1"></li>
+          <li class="img" data-id="2"><img src="images/image-product-2-thumbnail.jpg" alt="image 2"></li>
+          <li class="img" data-id="3"><img src="images/image-product-3-thumbnail.jpg" alt="image 3"></li>
+          <li class="img" data-id="4"><img src="images/image-product-4-thumbnail.jpg" alt="image 4"></li>
+        </ul>
+      </div>
+      <div class="product-info">
+        <div class="infos">
+          <span class="brand-name">SNEAKER COMPANY</span>
+          <h1 class="title">Fall Limeted Edition Sneakers</h1>
+          <p class="description">these low-profile sneakers are your perfect casual wear companion. Feauturing a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+          <div class="price">
+            <span class="new-price">$125.00</span>
+            <span class="old-price">$250.00</span>
+          </div>
+          <div class="actions-btns">
+            <div class="update-qty">
+              <button class="decrease" onclick="decrement()"><img src="images/icon-minus.svg" alt="decrease"></button>
+              <span class="qty">0</span>
+              <button class="increase" onclick="increment()"><img src="images/icon-plus.svg" alt="increase"></button>
+            </div>
+            <div class="add-to-cart"><img src="images/icon-cart.svg" alt="cart"><span>Add to cart</span></div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </main>
+
+</body>
+<script src="app.js"></script>
+</html>
