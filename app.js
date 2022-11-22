@@ -71,7 +71,7 @@ listImagesSlider.forEach(img => {
 function handleImages(elements , img , targetImage , check) {
     elements.forEach(ele => ele.classList.remove('active'));
     img.classList.add('active');
-    targetImage.src = `/images/image-product-${img.dataset.id}.jpg`;
+    targetImage.src = `images/image-product-${img.dataset.id}.jpg`;
     count = check ? img.dataset.id : count;
 }
 
@@ -79,7 +79,7 @@ function handleImages(elements , img , targetImage , check) {
 function next() {
     if(index < 4) {
         index++;
-        mainSliderImage.src = `/images/image-product-${index}.jpg`;
+        mainSliderImage.src = `images/image-product-${index}.jpg`;
         listImagesSlider.forEach(sliderImg => sliderImg.classList.remove('active'));
         (listImagesSlider.find(sliderImg => sliderImg.dataset.id == index)).classList.add('active');
     }
@@ -88,7 +88,7 @@ function next() {
 function prev() {
     if(index > 1) {
         index--;
-        mainSliderImage.src = `/images/image-product-${index}.jpg`;
+        mainSliderImage.src = `images/image-product-${index}.jpg`;
         listImagesSlider.forEach(sliderImg => sliderImg.classList.remove('active'));
         (listImagesSlider.find(sliderImg => sliderImg.dataset.id == index)).classList.add('active');
     }
@@ -100,14 +100,14 @@ function nextImage() {
         count = 0;
     }
     count++;
-    mainImage.src = `/images/image-product-${count}.jpg`;
+    mainImage.src = `images/image-product-${count}.jpg`;
 }
 function prevImage() {
     if(count == 1) {
         count = listImages.length + 1;
     }
     count--;
-    mainImage.src = `/images/image-product-${count}.jpg`;
+    mainImage.src = `images/image-product-${count}.jpg`;
 }
 
 // Handle Cart
@@ -123,7 +123,7 @@ function decrement() {
 addtoCart.onclick = function() {
    if(qtyNumber.textContent > 0) {
     let Cart = getStorage();
-    let item = { id : Date.now() , qty : qtyNumber.textContent , title : 'Fall Limeted Edition Sneakers' , img:'/images/image-product-1-thumbnail.jpg' , price : 125.00};
+    let item = { id : Date.now() , qty : qtyNumber.textContent , title : 'Fall Limeted Edition Sneakers' , img:'images/image-product-1-thumbnail.jpg' , price : 125.00};
     cartContainer.classList.add('show');
     Cart = [...Cart , item];
     window.localStorage.setItem('cart' , JSON.stringify(Cart));
@@ -150,7 +150,7 @@ function fillCart() {
           <h4 class="title">${title}</h4>
           <div class="total-price">$${price.toFixed(2)}x ${qty} <span class="total">$${(qty * price).toFixed(2)}</span></div>
         </div>
-        <div class="delete" onclick ='removeItem(${id})' ><img src="/images/icon-delete.svg" alt="delete item"></div>
+        <div class="delete" onclick ='removeItem(${id})' ><img src="images/icon-delete.svg" alt="delete item"></div>
       </li>`;
     }).join('')}
     </ul>
